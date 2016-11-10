@@ -1,0 +1,23 @@
+.loader {
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    &:before,
+    &:after {
+        animation-fill-mode: both;
+        animation-duration: 1.6s;
+        animation-iteration-count: infinite;
+        animation-name: ball-scale-ripple;
+        animation-timing-function: cubic-bezier(.21,.53,.56,.8);
+        border-radius: 50%;
+        border: 8px solid #abe188;
+        content: '';
+        height: 100%;
+        position: absolute;
+        width: 100%;
+    }
+    &:after {
+        animation-delay: 0.8s;
+        border-color: #f7ef99;
+    }
+}
