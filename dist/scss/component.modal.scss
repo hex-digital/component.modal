@@ -4,6 +4,7 @@
     animation-name: pop-in;
     background: rgba(0, 0, 0, 0.8);
     box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.25);
+    box-sizing: border-box;
     height: 90vh;
     left: 5vw;
     overflow-y: scroll;

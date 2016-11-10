@@ -96,7 +96,6 @@ var modals = function() {
         self.addCloseButton();
         $('.' + self.classModal + ' .' + self.classWrapper).load(self.getLocation + ' .' + self.classContent, function() {
             $('.' + self.classLoader).remove();
-            self.initContent();
         });
     };
     self.addCloseButton = function() {
