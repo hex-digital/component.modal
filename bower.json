@@ -1,0 +1,14 @@
+{
+    "name": "hexdigital-component-modal",
+    "version": "0.0.1",
+    "main": "dist/js/modal.min.js",
+    "ignore": [
+        "example",
+        ".gitignore",
+        "README.md",
+        "bower.json"
+    ],
+    "dependencies": {
+        "jquery": ">=1.10.2",
+    }
+}
