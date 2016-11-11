@@ -1,7 +1,13 @@
 {
     "name": "hexdigital-component-modal",
+    "repository": "git@github.com:hex-digital/component.modal.git",
     "version": "0.0.1",
     "main": "dist/js/modal.min.js",
+    "authors": [
+        "Jamie Warburton <jamie@hexdigital.com>",
+        "Alex Shortt <alex@hexdigital.com>"
+    ],
+    "license": "MIT",
     "ignore": [
         "example",
         ".gitignore",
@@ -9,6 +15,10 @@
         "bower.json"
     ],
     "dependencies": {
-        "jquery": ">=1.10.2",
-    }
+        "jquery": ">=1.10.2"
+    },
+    "keywords": [
+        "modal",
+        "component"
+    ]
 }
