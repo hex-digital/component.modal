@@ -2,7 +2,7 @@
  * Hex Modals
  *
  * Authors: 
- *     Alex Shortt <alex@hexdigital.com>
+ *     Alex Shortt     <alex@hexdigital.com>
  *     Jamie Warburton <jamie@hexdigital.com>
  *
  * A modal container is injected on the fly when a modal link is clicked. 
@@ -46,7 +46,7 @@ var modals = function() {
     self.listeners = function() {
         $(document).on('click', '.' + self.classModalLink, function(event) {
             event.preventDefault();
-            self.getLocation = $(this).attr('href');
+            self.getLocation = event.target;
             self.modalType = $(this).data('modal-type');
             self.showModal();
         });
