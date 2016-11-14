@@ -93,7 +93,7 @@ var modals = function() {
         if (self.modalType === 'video') {
             $('.' + self.classModal + ' .' + self.classWrapper)
                 .html('<div class="modal__video-wrapper"><iframe src="' + self.getLocation + '" frameborder="0" allowfullscreen></iframe></div>')
-                    .find('iframe')
+                .find('iframe')
                     .on('load', function() {
                         self.modalHasLoaded();
                     });
