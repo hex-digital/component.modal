@@ -92,11 +92,11 @@ var modals = function() {
         self.addCloseButton();
         if (self.modalType === 'video') {
             $('.' + self.classModal + ' .' + self.classWrapper)
-            .html('<div class="modal__video-wrapper"><iframe src="' + self.getLocation + '" frameborder="0" allowfullscreen></iframe></div>');
-            $('.' + self.classModal + ' .' + self.classWrapper + ' iframe')
-            .on('load', function(){
-                self.modalHasLoaded();
-            });
+                .html('<div class="modal__video-wrapper"><iframe src="' + self.getLocation + '" frameborder="0" allowfullscreen></iframe></div>');
+                $('.' + self.classModal + ' .' + self.classWrapper + ' iframe')
+                    .on('load', function(){
+                        self.modalHasLoaded();
+                    });
         } else {
             $('.' + self.classModal + ' .' + self.classWrapper).load(self.getLocation + ' .' + self.classContent, function() {
                 self.modalHasLoaded();
