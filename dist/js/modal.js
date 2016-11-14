@@ -46,7 +46,7 @@ var modals = function() {
     self.listeners = function() {
         $(document).on('click', '.' + self.classModalLink, function(event) {
             event.preventDefault();
-            self.getLocation = event.target;
+            self.getLocation = $(this).attr('href');
             self.modalType = $(this).data('modal-type');
             self.showModal();
         });
@@ -90,9 +90,18 @@ var modals = function() {
     };
     self.loadModal = function() {
         self.addCloseButton();
-        $('.' + self.classModal + ' .' + self.classWrapper).load(self.getLocation + ' .' + self.classContent, function() {
-            self.modalHasLoaded();
-        });
+        if (self.modalType === 'video') {
+            $('.' + self.classModal + ' .' + self.classWrapper)
+                .html('<div class="modal__video-wrapper"><iframe src="' + self.getLocation + '" frameborder="0" allowfullscreen></iframe></div>')
+                .find('iframe')
+                    .on('load', function() {
+                        self.modalHasLoaded();
+                    });
+        } else {
+            $('.' + self.classModal + ' .' + self.classWrapper).load(self.getLocation + ' .' + self.classContent, function() {
+                self.modalHasLoaded();
+            });
+        }
     };
     self.modalHasLoaded = function() {
         $('.' + self.classLoader).remove();
