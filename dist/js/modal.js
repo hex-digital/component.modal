@@ -1,18 +1,18 @@
 /**
  * Hex Modals
  *
- * Authors: 
+ * Authors:
  *     Alex Shortt     <alex@hexdigital.com>
  *     Jamie Warburton <jamie@hexdigital.com>
  *
- * A modal container is injected on the fly when a modal link is clicked. 
+ * A modal container is injected on the fly when a modal link is clicked.
  * If it has already been created, such as when clicking a modal link from
  * within modal, the .modal__content will simply be updated instead.
  * The content is loaded in via ajax, by loading the div from that page that
  * has the class set in `self.classContent`.
  * When closed, the modal is removed from the DOM.
  *
- * To use: 
+ * To use:
  *   On your target page, add a div with class set to the value of `self.classContent` below.
  *   On your destination page, add a link with class set to `self.classModalLink` below.
  *   Style your overlay with `self.classOverlay` & the main modal container with `self.classModal`.
@@ -74,29 +74,31 @@ var modals = function() {
         } else {
             self.createModal();
         }
-        if (typeof modalLoaded === 'function') { 
-            modalLoaded();
-        }
+        self.loadModal();
     };
     self.createModal = function() {
         var modalTypeString = undefined === self.modalType ? '' : ' modal--' + self.modalType;
         self.setBackground('open');
         self.$selectorAppendModal.prepend('<div class="' + self.classModal + modalTypeString + '"><div class="' + self.classWrapper + '"></div></div>');
         $('.' + self.classModal).prepend('<div class="' + self.classLoader + '">' + self.htmlLoader + '</div>');
-        self.loadModal();
     };
     self.updateModal = function() {
         $('.' + self.classModal).prepend('<div class="' + self.classLoader + '">' + self.htmlLoader + '</div>');
         $('.' + self.classModal + ' .' + self.classWrapper)
             .children()
             .remove();
-        self.loadModal();
     };
     self.loadModal = function() {
         self.addCloseButton();
         $('.' + self.classModal + ' .' + self.classWrapper).load(self.getLocation + ' .' + self.classContent, function() {
-            $('.' + self.classLoader).remove();
+            self.modalHasLoaded();
         });
+    };
+    self.modalHasLoaded = function() {
+        $('.' + self.classLoader).remove();
+        if (typeof modalLoaded === 'function') {
+            modalLoaded();
+        }
     };
     self.addCloseButton = function() {
         if (!$('.' + self.classCloseButton).length) {
