@@ -16,6 +16,13 @@
     &--closing {
         animation-name: pop-in-reverse;
     }
+    &--video {
+        overflow: hidden;
+        .modal__wrapper {
+            align-items: center;
+            display: flex;
+        }
+    }
     &__close-btn {
         cursor: pointer;
         display: block;
@@ -65,6 +72,20 @@
         transform: translate(-50%, -50%);
         width: 150px;
         z-index: 999;
+    }
+    &__video-wrapper {
+        height: 0;
+        padding-bottom: 56.6%;
+        position: relative;
+        width: 100%;
+        iframe {
+            height: 100%;
+            left: 0;
+            padding: 5%;
+            position: absolute;
+            top: 0;
+            width: 100%;
+        }
     }
 }
 
