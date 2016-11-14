@@ -74,29 +74,31 @@ var modals = function() {
         } else {
             self.createModal();
         }
+        self.loadModal();
     };
     self.createModal = function() {
         var modalTypeString = undefined === self.modalType ? '' : ' modal--' + self.modalType;
         self.setBackground('open');
         self.$selectorAppendModal.prepend('<div class="' + self.classModal + modalTypeString + '"><div class="' + self.classWrapper + '"></div></div>');
         $('.' + self.classModal).prepend('<div class="' + self.classLoader + '">' + self.htmlLoader + '</div>');
-        self.loadModal();
     };
     self.updateModal = function() {
         $('.' + self.classModal).prepend('<div class="' + self.classLoader + '">' + self.htmlLoader + '</div>');
         $('.' + self.classModal + ' .' + self.classWrapper)
             .children()
             .remove();
-        self.loadModal();
     };
     self.loadModal = function() {
         self.addCloseButton();
         $('.' + self.classModal + ' .' + self.classWrapper).load(self.getLocation + ' .' + self.classContent, function() {
-            $('.' + self.classLoader).remove();
-            if (typeof modalLoaded === 'function') {
-                modalLoaded();
-            }
+            self.modalHasLoaded();
         });
+    };
+    self.modalHasLoaded = function() {
+        $('.' + self.classLoader).remove();
+        if (typeof modalLoaded === 'function') {
+            modalLoaded();
+        }
     };
     self.addCloseButton = function() {
         if (!$('.' + self.classCloseButton).length) {
