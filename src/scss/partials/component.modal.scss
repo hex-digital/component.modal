@@ -18,6 +18,9 @@
     }
     &--video {
         overflow: hidden;
+        * {
+            box-sizing: border-box;
+        }
         .modal__wrapper {
             align-items: center;
             display: flex;
