@@ -1,0 +1,191 @@
+/** demo.css **/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* ------ CUSTOM DEMO CSS ------ */
+
+/* base */
+
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab:300,400');
+
+body, html {
+    box-sizing: border-box;
+    display: block;
+    height: 100%;
+    position: relative;
+}
+body {
+    color: #333;
+    background: #f5f5f5;
+}
+
+/* wrappers */
+
+.wrapper {
+    border: 30px solid #fff;
+    padding: 30px;
+}
+
+/* areas */
+
+.area {
+    display: block;
+    float: left;
+}
+
+.area__main {
+    border-right: 1px solid #9a9a9a;
+    padding-right: 30px;
+    width: 66.66%;
+}
+
+.area__aside {
+    padding-left: 30px;
+    width: 33.33%;
+}
+
+/* typoggraphy */
+
+html {
+    font-size: 1em;
+}
+body {
+    color: #333;
+    font-family: 'Roboto Condensed', sans-serif;;
+    font-weight: 300;
+    line-height: 1.45;
+}
+p {
+    margin-bottom: 1.3em;
+}
+h1, h2, h3, h4 {
+    font-weight: inherit;
+    line-height: 1.2;
+    margin: 1.414em 0 0.5em;
+}
+h1 {
+    font-size: 3.375em;
+    margin-top: 0;
+}
+h2 {
+    font-size: 2.25em;
+}
+h3 {
+    font-size: 1.5em;
+}
+h4 {
+    font-size: 1em;
+}
+small,
+.font_small {
+    font-size: 0.667em;
+}
+
+/* buttons */
+.btn,
+.modal__link {
+    background: #7AC7C4;
+    border-radius: 3px;
+    color: #ffffff;
+    font-size: 1em;
+    padding: 7px 20px 7px 20px;
+    text-decoration: none;
+}
+
+.btn:hover,
+.modal__link:hover {
+  background: #6eb3b0;
+  text-decoration: none;
+}
+
+/* rows */
+
+.row {
+    border-bottom: 1px solid #9a9a9a;
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+}
+.wrapper .row:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+.row h2 {
+    margin-top: 0;
+}
+
+/* Modal themes */
+/* ----- Default - */
+
+.modal__content {
+    color: #fff;
+}
+
+/**
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    contenteditable attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that are clearfixed.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+.cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.cf:after {
+    clear: both;
+}
+
+/**
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+.cf {
+    *zoom: 1;
+}
