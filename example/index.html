@@ -2,13 +2,28 @@
 <html>
 <head>
     <title>Example page</title>
-    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link href="../dist/css/modal.css" rel="stylesheet" type="text/css">
+    <link href="demo.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-    <h1>Example of the modal in action</h1>
-    <a class="modal__link" href="modal_content.html">Open my Modal</a>
+    <div class="wrapper">
+
+        <div class="row">
+            <h2>Default usage</h2>
+            <a class="modal__link" href="content/modal_content.html">Open Modal</a>
+        </div>
+
+        <div class="row">
+            <h2>Two-tier usage</h2>
+            <a class="modal__link" href="content/modal_content_two_tier.html">Open Modal</a>
+        </div>
+
+    </div>
+
+
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script src="js/modal.min.js"></script>
+    <script src="../dist/js/modal.min.js"></script>
     <script>var modal = modals();</script>
 </body>
 </html>
