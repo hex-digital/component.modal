@@ -2,6 +2,7 @@
     "name": "hexdigital-component-modal",
     "repository": "git@github.com:hex-digital/component.modal.git",
     "version": "0.0.5",
+    "description": "The modal component project repo - just a test for now",
     "main": "dist/js/modal.min.js",
     "authors": [
         "Jamie Warburton <jamie@hexdigital.com>",
