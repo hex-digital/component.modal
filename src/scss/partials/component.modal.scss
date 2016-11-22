@@ -89,10 +89,11 @@
     }
 }
 
-.overlay-background {
+.fix-window-scroll {
     overflow: hidden;
-    position: fixed;
-    width: 100%;
+}
+
+.overlay-background {
     &:before {
         background: rgba(0, 0, 0, 0.7);
         content: '';

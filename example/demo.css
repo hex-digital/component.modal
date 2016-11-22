@@ -53,12 +53,11 @@ table {
 body, html {
     color: #333;
     display: block;
-    height: 100%;
     position: relative;
+    border: 30px solid #fff;
 }
 body {
     background: #f5f5f5;
-    border: 30px solid #fff;
     box-sizing: border-box;
 }
 

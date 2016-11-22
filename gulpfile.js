@@ -113,7 +113,8 @@ gulp.task('clear-sass-cache', function() {
  */
  gulp.task('watch', function() {
     livereload.listen();
-    gulp.watch('src/scss/*.scss', ['sass']);
+    gulp.watch('src/scss/partials/*.scss', ['sass']);
+    gulp.watch('src/scss/modal.scss', ['sass']);
     gulp.watch('src/js/*.js', ['scripts']);
 });
 
