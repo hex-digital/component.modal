@@ -44,7 +44,7 @@ var reporter = function(file, cb) {
  * supports lib-sass, this should be used instead as it's 5000x quicker.
  */
 gulp.task('sass', function() {
-    return sass('src/scss', {
+    return sass('src/scss/modal.scss', {
             style: 'compressed'
         })
         .pipe(replace('/*!', '/*'))
