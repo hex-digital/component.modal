@@ -16,7 +16,8 @@
     &--closing {
         animation-name: pop-in-reverse;
     }
-    &--video {
+    &--video,
+    &--pdf {
         overflow: hidden;
         * {
             box-sizing: border-box;
@@ -24,6 +25,7 @@
         .modal__wrapper {
             align-items: center;
             display: flex;
+            height: 100%;
         }
     }
     &__close-btn {
@@ -76,8 +78,8 @@
         width: 150px;
         z-index: 999;
     }
-    &__video-wrapper {
-        height: 0;
+    &__iframe-wrapper {
+        height: 100%;
         padding-bottom: 56.6%;
         position: relative;
         width: 100%;

@@ -35,7 +35,7 @@ var modals = function() {
         self.classContent = 'modal__content'; // Class of content to load into modal from other pages via ajax
         self.classModalLink = 'modal__link'; // A link that opens a modal
         self.classOverlay = 'overlay-background'; // The overlay background via :after
-        self.classFixScroll = 'fix-window-scroll'; // Class to fix background body scrolling 
+        self.classFixScroll = 'fix-window-scroll'; // Class to fix background body scrolling
         self.classModal = 'modal'; // The modal object itself
         self.classWrapper = 'modal__wrapper'; // The wrapper class to use in the modal
         self.classCloseButton = 'modal__close-btn'; // A modal close button
@@ -91,9 +91,9 @@ var modals = function() {
     };
     self.loadModal = function() {
         self.addCloseButton();
-        if (self.modalType === 'video') {
+        if (self.modalType === 'video' || self.modalType === 'pdf') {
             $('.' + self.classModal + ' .' + self.classWrapper)
-                .html('<div class="modal__video-wrapper"><iframe src="' + self.getLocation + '" frameborder="0" allowfullscreen></iframe></div>')
+                .html('<div class="modal__iframe-wrapper"><iframe src="' + self.getLocation + '" frameborder="0" allowfullscreen></iframe></div>')
                 .find('iframe')
                     .on('load', function() {
                         self.modalHasLoaded();
