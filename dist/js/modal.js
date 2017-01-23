@@ -90,9 +90,9 @@ var modals = function() {
     };
     self.loadModal = function() {
         self.addCloseButton();
-        if (self.modalType === 'video') {
+        if (self.modalType === 'video' || self.modalType === 'pdf') {
             $('.' + self.classModal + ' .' + self.classWrapper)
-                .html('<div class="modal__video-wrapper"><iframe src="' + self.getLocation + '" frameborder="0" allowfullscreen></iframe></div>')
+                .html('<div class="modal__iframe-wrapper"><iframe src="' + self.getLocation + '" frameborder="0" allowfullscreen></iframe></div>')
                 .find('iframe')
                     .on('load', function() {
                         self.modalHasLoaded();
